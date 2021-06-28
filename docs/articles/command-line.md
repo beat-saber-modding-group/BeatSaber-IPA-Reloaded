@@ -26,6 +26,16 @@ Here's a quick list of what they are and what they do.
 
   > Makes a console appear with log information at startup.
   >
+  > Optionally, to start Beat Saber with an external console, an explicit `-pid` can be specified. This allows the game to be launched without being interrupted by Steam's "Allow game launch?" popup when directly launching `Beat Saber.exe` with arguments.
+  > - Using PowerShell: 
+  >   ```powershell
+  >   .\steam -applaunch 620980 --verbose -pid $PID
+  >   ```
+  > - Using Command Prompt:
+  >   ```powershell
+  >   powershell -c ".\steam -applaunch 620980 --verbose -pid (Get-CimInstance Win32_Process -Filter ProcessId=$PID).ParentProcessId"
+  >   ```
+  >
 
 - `--debug`
 
